@@ -1,6 +1,7 @@
+package Step2;
 import java.util.Scanner;
 
-public class 두_수_비교하기 {
+public class CompareTwoNum {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);

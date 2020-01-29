@@ -1,5 +1,6 @@
+package Step1;
 
-public class °³ {
+public class Dog {
 
 	public static void main(String[] args) {
 		System.out.println("|\\_/|");

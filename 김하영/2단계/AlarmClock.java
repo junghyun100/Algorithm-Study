@@ -1,6 +1,7 @@
+package Step2;
 import java.util.Scanner;
 
-public class 알람_시계 {
+public class AlarmClock {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);

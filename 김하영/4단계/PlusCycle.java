@@ -1,6 +1,7 @@
+package Step4;
 import java.util.Scanner;
 
-public class 더하기_사이클 {
+public class PlusCycle {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);

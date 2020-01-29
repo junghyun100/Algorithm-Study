@@ -1,5 +1,6 @@
+package Step1;
 
-public class °í¾çÀÌ {
+public class Cat {
 
 	public static void main(String[] args) {
 		System.out.println("\\    /\\");

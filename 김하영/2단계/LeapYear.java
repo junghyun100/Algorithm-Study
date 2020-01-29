@@ -1,6 +1,7 @@
+package Step2;
 import java.util.Scanner;
 
-public class À±³â {
+public class LeapYear {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);

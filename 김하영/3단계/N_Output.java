@@ -1,12 +1,13 @@
+package Step3;
 import java.util.Scanner;
 
-public class ±âÂï_N {
+public class N_Output {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int N = scanner.nextInt();
 
-		for (int i = N; i > 0; i--) {
+		for (int i = 1; i <= N; i++) {
 			System.out.println(i);
 		}
 	}

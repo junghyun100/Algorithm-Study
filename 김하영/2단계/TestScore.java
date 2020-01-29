@@ -1,6 +1,7 @@
+package Step2;
 import java.util.Scanner;
 
-public class 시험_성적 {
+public class TestScore {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);

@@ -1,6 +1,7 @@
+package Step3;
 import java.util.Scanner;
 
-public class X보다_작은_수 {
+public class LessThanX {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
