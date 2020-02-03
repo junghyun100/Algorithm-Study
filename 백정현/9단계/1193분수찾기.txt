@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		int X =sc.nextInt();
+		int Line = checkLine(X);
+		int Num = checkNum(X);
+		printX(Line,Num);
+		sc.close();
+	}
+
+	public static int checkLine(int X) {
+		int temp = X;
+		int Line = 0;
+		for(int i = 0; temp>0;i++)
+		{
+			temp-=i;
+			Line=i;
+		}
+		return Line;
+	}
+	public static int checkNum(int X)
+	{
+		int tempX= X;
+		int Num=0;
+		for(int i = 0; tempX>0;i++)
+		{
+			Num = tempX;
+			tempX-=i;
+		}
+		return Num;
+	}
+	public static void printX(int Line,int Num)
+	{
+		int A = 1;
+		int B = 1;
+
+		if(Line %2 == 0)
+		{
+			B = Line;
+			for(int i = 1;i<Num;i++)
+			{
+				A++;
+				B--;
+			}
+			System.out.println(A +"/"+ B);
+		}
+		else
+		{
+			A = Line;
+			for(int i = 1;i<Num;i++)
+			{
+				A--;
+				B++;
+			}
+			System.out.println(A +"/"+ B);
+		}
+	}
+}

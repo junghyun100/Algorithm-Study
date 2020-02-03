@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int Nkg = sc.nextInt();
+		int BoxCount = 0;
+		while(true)
+		{
+			if(Nkg%5 ==0)
+			{
+				BoxCount += (Nkg/5);
+				System.out.println(BoxCount);
+				break;
+			}
+			Nkg-=3;
+			BoxCount++;
+			if(Nkg<0)
+			{
+				System.out.println("-1");
+				break;
+			}
+		}
+		sc.close();
+	}
+}

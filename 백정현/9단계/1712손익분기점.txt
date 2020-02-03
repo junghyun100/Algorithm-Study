@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		long A = sc.nextLong();
+		long B = sc.nextLong();
+		long C = sc.nextLong();
+		int BEV = 0;
+		for(int i=0;;i++)
+		{
+			if(A+(B*i)<C*i)
+			{
+				BEV=i;
+				break;
+			}
+			if(C-B <= 0)
+			{
+				BEV=-1;
+				break;
+			}
+		}
+		System.out.println(BEV);
+	}
+}
