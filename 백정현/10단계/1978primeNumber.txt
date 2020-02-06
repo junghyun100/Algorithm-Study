@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import java.util.Scanner;
 
@@ -31,3 +32,51 @@ public class Main {
         return answer;
     }
 }
+=======
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int M = scanner.nextInt();
+		int N = scanner.nextInt();
+		int sum = 0;
+		int min = 0;
+		int count = 0;
+        for (; M <= N; M++) {
+            if (checkPrimeNumber(M) == true) {
+				if (count == 0)
+					min = M;
+				sum += M;
+				count++;
+			}
+        }
+        if(count == 0)
+		{
+			System.out.println("-1");
+		}
+        else
+		{
+			System.out.println(sum);
+			System.out.println(min);
+		}
+    }
+
+    private static boolean checkPrimeNumber(int number) {
+        int temp = number;
+        boolean answer = true;
+        if (temp == 1) {
+            answer = false;
+        } else {
+            for (int i = 2; i < temp; i++) {
+                if (temp % i == 0)
+				{
+					answer = false;
+					break;
+				}
+            }
+        }
+        return answer;
+    }
+}
+>>>>>>> c1672f106c810fdfe4838836ec0f12251260502a

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import java.util.Scanner;
 
 public class Main {
@@ -29,4 +30,37 @@ public class Main {
 		System.out.println(Htemp*100+Wtemp);
 
 	}
+=======
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		for(int i = 0; i < T; i++)
+		{
+			int H = sc.nextInt();
+			int W = sc.nextInt();
+			int N = sc.nextInt();
+			CheckTheRoom(H,W,N);
+		}
+		sc.close();
+	}
+	public static void CheckTheRoom(int H, int W, int N)
+	{
+		int Htemp=1;
+		int Wtemp=1;
+		if(N%H==0) {
+			Wtemp=N/H;
+			Htemp=H;
+		}
+		else
+		{
+			Wtemp = N/H+1;
+			Htemp = N%H;
+		}
+		System.out.println(Htemp*100+Wtemp);
+
+	}
+>>>>>>> c1672f106c810fdfe4838836ec0f12251260502a
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import java.util.*;
 
 public class Main {
@@ -22,4 +23,30 @@ public class Main {
             System.out.println(count);
         }
     }
+=======
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int M = 1;
+        while (M > 0) {
+            M = scanner.nextInt();
+            if (M == 0) break;
+            int N = M * 2;
+            int count = 0;
+            boolean[] array = new boolean[N + 1];
+
+			array[1] = false;
+            for (int i = 2; i <= N; i++)
+            	array[i] = true;
+            for (int i = 2; i <= N; i++)
+                for (int j = 2; j * i <= N; j++)
+					array[i * j] = false;
+            for (int i = M + 1; i < array.length; i++)
+                if (array[i]) count++;
+            System.out.println(count);
+        }
+    }
+>>>>>>> c1672f106c810fdfe4838836ec0f12251260502a
 }
