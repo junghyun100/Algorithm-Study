@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int M = scanner.nextInt();
+        int N = scanner.nextInt();
+        int i, j;
+        boolean Array[] = new boolean[N + 1];
+        for (i = 0; i <= N; i++)
+        	Array[i] = true;
+        Array[1] = false;
+
+        for (i = 2; i <= N; i++)
+            for (j = 2; i * j <= N; j++)
+                Array[i * j] = false;
+
+        for (i = M; i <= N; i++)
+        	if (Array[i] == true) System.out.println(i);
+        scanner.close();
+    }
+}

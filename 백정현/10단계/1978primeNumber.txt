@@ -1,0 +1,33 @@
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        int primeNumber = 0;
+        for (int i = 0; i < N; i++) {
+            int number = scanner.nextInt();
+            if (checkPrimeNumber(number) == true)
+                primeNumber++;
+        }
+        System.out.println(primeNumber);
+    }
+
+    private static boolean checkPrimeNumber(int number) {
+        int temp = number;
+        boolean answer = true;
+        if (temp == 1) {
+            answer = false;
+        } else {
+            for (int i = 2; i < temp; i++) {
+                if (temp % i == 0)
+				{
+					answer = false;
+					break;
+				}
+            }
+        }
+        return answer;
+    }
+}
