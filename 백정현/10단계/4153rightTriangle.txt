@@ -1,0 +1,20 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            int X = sc.nextInt();
+            int Y = sc.nextInt();
+            int Z = sc.nextInt();
+            if (X == 0 && Y == 0 && Z == 0)
+                break;
+            else {
+                if ((X * X + Y * Y == Z * Z) || (X * X + Z * Z == Y * Y) || (Z * Z + Y * Y == X * X))
+                    System.out.println("right");
+                else
+                    System.out.println("wrong");
+            }
+        }
+    }
+}
