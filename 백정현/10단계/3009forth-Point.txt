@@ -1,0 +1,27 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int arrayX[] = new int[3];
+        int arrayY[] = new int[3];
+
+        for(int i=0; i<3; i++){
+            arrayX[i] = sc.nextInt();
+            arrayY[i] = sc.nextInt();
+        }
+        findPoint(arrayX);
+        findPoint(arrayY);
+    }
+
+    public static void findPoint(int array[]){
+        if(array[0]==array[1])
+            System.out.print(array[2]);
+        else if(array[0]==array[2])
+            System.out.print(array[1]);
+        else
+            System.out.print(array[0]);
+        System.out.print(" ");
+
+    }
+}

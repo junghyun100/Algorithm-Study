@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int T = scanner.nextInt();
+        while (T > 0) {
+            int n = scanner.nextInt();
+            boolean[] array = new boolean[10001];
+			array[1] = false;
+            for (int i = 2; i < array.length; i++)
+            	array[i] = true;
+            for (int i = 2; i < array.length; i++) {
+                for (int j = 2; j * i < array.length; j++) {
+                    array[i * j] = false;//에라토네스 체로 소수 저장
+                }
+            }
+            int goldbachPartitionOne = n/2;
+            int goldbachPartitionTwo = n/2;
+            for(int i=0;(array[goldbachPartitionOne]==false)||(array[goldbachPartitionTwo]==false);i++)
+            {
+                goldbachPartitionOne--;
+                goldbachPartitionTwo++;
+            }
+            System.out.println(goldbachPartitionOne + " " + goldbachPartitionTwo);
+            T--;
+        }
+    }
+}
