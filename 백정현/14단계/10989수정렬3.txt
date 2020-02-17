@@ -1,0 +1,25 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        BufferedReader bufferedreader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedwriter = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        int n = Integer.parseInt(bufferedreader.readLine());
+        int[] array = new int[10001];
+        for (int i = 0; i < n; i++) {
+            array[Integer.parseInt(bufferedreader.readLine())]++;
+        }
+        for (int i = 1; i < 10001; i++) {
+            while(0 < array[i]--) {
+                bufferedwriter.write(Integer.toString(i) + "\n");
+            }
+        }
+        bufferedwriter.flush();
+        bufferedreader.close();
+        bufferedwriter.close();
+    }
+}
