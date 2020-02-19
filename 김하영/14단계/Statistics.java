@@ -1,61 +1,43 @@
 package Step14;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 public class Statistics {
-
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		int N = scanner.nextInt();
-		int arr[] = new int[N];
-
-		for (int i = 0; i < N; i++) {
-			arr[i] = scanner.nextInt();
-		}
-		Arrays.sort(arr);
-
-		System.out.println(average(arr));
-		System.out.println(median(arr));
-		System.out.println(mode(arr));
-		System.out.println(range(arr));
-
-	}
-
-	static double average(int arr[]) {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int n = Integer.parseInt(br.readLine());
+		List<Integer> list = new ArrayList<>();
+		int[] arr = new int[n];
+		int[] check = new int[8001];
+		int max = 0;
 		int sum = 0;
-
-		for (int i = 0; i < arr.length; i++) {
+		for (int i = 0; i < n; i++) {
+			arr[i] = Integer.parseInt(br.readLine());
 			sum += arr[i];
+			check[arr[i] + 4000]++;
 		}
-		return Math.round(sum / arr.length);
-	}
 
-	static int median(int arr[]) {
-		int result = 0;
-
-		if (arr.length % 2 == 0) {
-			result = (arr[arr.length / 2] + arr[arr.length / 2 + 1]) / 2;
+		System.out.println((int) Math.round((double) sum / n)); // 산술평균
+		Arrays.sort(arr);
+		System.out.println(arr[n / 2]); // 중앙값
+		for (int i = 0; i < 8001; i++) {
+			if (check[i] >= max) {
+				max = check[i];
+			}
+		}
+		for (int i = 0; i < 8001; i++) {
+			if (check[i] == max) {
+				list.add(i - 4000);
+			}
+		}
+		if (list.size() == 1) {
+			System.out.println(list.get(0));
 		} else {
-			result = arr[(arr.length + 1) / 2];
+			Collections.sort(list);
+			System.out.println(list.get(1));
 		}
-		return result;
-	}
+		System.out.println(Math.abs(arr[arr.length - 1] - arr[0])); // 범위
 
-	static int mode(int arr[]) {
-		int result = 0;
-		int maxindex = 0;
-		int index[] = new int[8000];
-		ArrayList <Integer> list = new ArrayList<>();
-
-		for (int i = 0; i < arr.length; i++) {
-			index[arr[i] + 4000]++;
-		}
-		return arr[result];
-	}
-
-	static int range(int arr[]) {
-		return arr[arr.length - 1] - arr[0];
 	}
 }
