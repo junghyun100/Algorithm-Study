@@ -11,19 +11,20 @@ class XY {
 }
 
 public class Main {
-    int pane[][] = new int[9][9];
-    ArrayList<XY> arrayList = new ArrayList();
+    static int pane[][] = new int[9][9];
+    static ArrayList<XY> arrayList = new ArrayList();
 
-    public void DFS(ArrayList<XY> arr, int index) {
+    public static void DFS(ArrayList<XY> arr, int index) {
         if (index == arrayList.size()) {
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 9; j++)
-                    System.out.println(pane[i][j] + " ");
+                    System.out.print(pane[i][j] + " ");
+                System.out.println("");
             }
             System.exit(0);
         }
         for (int i = 1; i < 10; i++) {
-            if (checkRow(arr, index, i) == true && checkColumn(arr, index, i) == true) {
+            if (checkRow(arr, index, i) == true && checkColumn(arr, index, i) == true && blankChecking(arr,index,i)==true) {
                 pane[arr.get(index).x][arr.get(index).y] = i;
                 DFS(arr, index + 1);
             }
@@ -32,7 +33,7 @@ public class Main {
         }
     }
 
-    public boolean checkRow(ArrayList<XY> arr, int index, int pro) {
+    public static boolean checkRow(ArrayList<XY> arr, int index, int pro) {
 
         for (int i = 0; i < 9; i++) {
             if (arr.get(index).y == i) continue;
@@ -41,7 +42,7 @@ public class Main {
         return true;
     }
 
-    public boolean checkColumn(ArrayList<XY> arr, int index, int pro) {
+    public static boolean checkColumn(ArrayList<XY> arr, int index, int pro) {
 
         for (int i = 0; i < 9; i++) {
             if (arr.get(index).x == i) continue;
@@ -51,7 +52,27 @@ public class Main {
         return true;
     }
 
-    public void main(String[] args) {
+    public static boolean blankChecking(ArrayList<XY> arr, int index, int pro)
+    {
+        int a = arr.get(index).x/3;
+        int b = arr.get(index).y/3;
+        a*=3;
+        b*=3;
+
+        for(int i=a;i<a+3;i++)
+        {
+            for(int j=b;j<b+3;j++)
+            {
+                if(i == arr.get(index).x && j == arr.get(index).y) continue;
+
+                if(pane[i][j]!=0 &&pane[i][j] == pro) return false;
+            }
+        }
+
+        return true;
+    }
+
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         for (int i = 0; i < 9; i++) {
