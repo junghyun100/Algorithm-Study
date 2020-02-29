@@ -1,0 +1,60 @@
+import java.util.*;
+public class Main {
+
+    static int N;
+    static int[] number;
+    static int[] Operator = new int[4];
+    static int min = Integer.MAX_VALUE;
+    static int max = Integer.MIN_VALUE;
+
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        N = sc.nextInt();//수의 갯수
+        number = new int[N+1];
+        for(int i=0;i<N;i++){
+            number[i] = sc.nextInt();// 오퍼랜드
+        }
+        for(int i=0;i<4;i++){
+            Operator[i] = sc.nextInt();//연산자들의 사용되는 갯수
+        }
+        dfs(0,number[0],0);
+        System.out.println(max);
+        System.out.println(min);
+
+    }
+    public static void dfs(int num, int result,int index){
+        if(num == N-1){
+            if(max<result)
+                max = result;
+            if(min>result)
+                min = result;
+        }
+
+        for(int i=0;i<4;i++){
+            if(Operator[i]>0){
+                if(i==0){
+                    Operator[i]--;
+                    dfs(num+1,result + number[index+1],index+1);
+                    Operator[i]++;
+                }
+                else if(i==1){
+                    Operator[i]--;
+                    dfs(num+1,result - number[index+1],index+1);
+                    Operator[i]++;
+                }
+                else if(i==2){
+                    Operator[i]--;
+                    dfs(num+1,result * number[index+1],index+1);
+                    Operator[i]++;
+                }
+                else if(i==3){
+                    Operator[i]--;
+                    dfs(num+1,result / number[index+1],index+1);
+                    Operator[i]++;
+                }
+            }
+        }
+    }
+}
