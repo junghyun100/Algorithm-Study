@@ -44,7 +44,6 @@ public class BOJ_10828_Stack {
 					System.out.println(result);
 					break;
 				}
-			System.out.println(i);
 		}
 	}
 }
