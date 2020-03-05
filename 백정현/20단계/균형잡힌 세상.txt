@@ -1,0 +1,39 @@
+import java.util.Scanner;
+import java.util.Stack;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        while(true) {
+            Stack<Character> brackets = new Stack<>();
+            String str = scanner.nextLine();
+            if(str.equals(".")) break;
+            for(int j = 0 ; j < str.length(); j++)
+            {
+                if(str.charAt(j)=='(' || str.charAt(j)=='[') {
+                    brackets.add(str.charAt(j));
+                }
+                else if(str.charAt(j)==')') {
+                    if (brackets.isEmpty() || brackets.peek() =='[')
+                    {
+                        brackets.add(str.charAt(j));
+                        break;
+                    }
+                    brackets.pop();
+                }
+                else if(str.charAt(j)==']')
+                {
+                    if(brackets.isEmpty() || brackets.peek() =='(')
+                    {
+                        brackets.add(str.charAt(j));
+                        break;
+                    }
+                    brackets.pop();
+                }
+            }
+            if(brackets.isEmpty())
+                System.out.println("YES");
+            else System.out.println("NO");
+        }
+    }
+}
