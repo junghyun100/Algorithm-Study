@@ -1,0 +1,48 @@
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args){
+        Queue<Integer> queue = new LinkedList<>();
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        int rear = 0;
+        for(int i = 0; i < N; i++)
+        {
+             String str = scanner.next();
+             if(str.equals("push"))
+             {
+                 int input = scanner.nextInt();
+                 queue.add(input);
+                 rear = input;
+             }
+            else if(str.equals("pop"))
+            {
+                if(queue.isEmpty()) System.out.println("-1");
+                else {
+                    System.out.println(queue.peek());
+                    queue.poll();
+                    if(queue.isEmpty()) rear = 0;
+                }
+            }
+            else if(str.equals("size")) System.out.println(queue.size());
+            else if (str.equals("empty"))
+             {
+                 if(queue.isEmpty()) System.out.println("1");
+                 else System.out.println("0");
+             }
+            else if(str.equals("front"))
+             {
+                 if(queue.isEmpty()) System.out.println("-1");
+                 else System.out.println(queue.peek());
+             }
+             else if(str.equals("back"))
+             {
+                 if(queue.isEmpty()) System.out.println("-1");
+                 else System.out.println(rear);
+             }
+        }
+        scanner.close();
+    }
+}
