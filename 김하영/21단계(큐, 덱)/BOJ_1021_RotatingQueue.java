@@ -21,7 +21,7 @@ class BOJ_1021_RotatingQueue {
 		}
 
 		for (int i = 0; i < M; i++) {
-			if(position[i] <= deque.size()/2) {
+			if(((LinkedList<Integer>) deque).indexOf(position[i]) <= deque.size()/2) {
 				while(position[i] != deque.peek()) {
 					deque.addLast(deque.pop());
 					count++;
