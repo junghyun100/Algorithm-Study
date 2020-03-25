@@ -1,4 +1,3 @@
-package Step28;
 
 import java.io.*;
 import java.util.*;
@@ -49,11 +48,11 @@ public class BOJ_7569_Tomato {
 				if (nextX < 0 || nextY < 0 || nextZ < 0 || nextX >= N || nextY >= M || nextZ >= H) {
 					continue;
 				}
-				if (box[nextX][nextY][nextZ] != 0) {
+				if (box[nextZ][nextX][nextY] != 0) {
 					continue;
 				}
-				box[nextX][nextY][nextZ] = box[Point.x][Point.y][Point.z] + 1;
-				queue.add(new Point(nextX, nextY, nextZ));
+				box[nextZ][nextX][nextY] = box[Point.z][Point.x][Point.y] + 1;
+				queue.add(new Point(nextZ, nextX, nextY));
 			}
 		}
 		int max = 0;
@@ -78,7 +77,7 @@ class Point {
 	int y;
 	int z;
 
-	Point(int x, int y, int z) {
+	Point(int z, int x, int y) {
 		this.x = x;
 		this.y = y;
 		this.z = z;
