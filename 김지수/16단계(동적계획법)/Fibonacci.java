@@ -15,11 +15,13 @@ public class Fibonacci {
 	static long fibonacci(long n) {
 		if(n == 0) {
 			return 0;
+		}else if(n==1){
+			return 1;
 		}else {
 			long first = 0;
 			long second = 1;
 			long result = 0;
-			for(int i = 1; i<n; i++) {
+			for(int i = 2; i<=n; i++) {
 				result = first + second;
 				first = second;
 				second = result;
