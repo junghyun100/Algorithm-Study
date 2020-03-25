@@ -24,10 +24,10 @@ public class BOJ_7569_Tomato {
 				}
 			}
 		}
-		BFS(box, N, M, H);
+		BFS(box, H, N, M);
 	}
 
-	public static void BFS(int[][][] box, int N, int M, int H) {
+	public static void BFS(int[][][] box, int H, int N, int M) {
 		Queue<Point> queue = new LinkedList<Point>();
 		for (int i = 0; i < H; i++) {
 			for (int j = 0; j < N; j++) {
@@ -51,10 +51,16 @@ public class BOJ_7569_Tomato {
 				if (box[nextZ][nextX][nextY] != 0) {
 					continue;
 				}
+<<<<<<< HEAD
 				box[nextZ][nextX][nextY] = box[Point.z][Point.x][Point.y] + 1;
 				queue.add(new Point(nextZ, nextX, nextY));
+=======
+				queue.add(new Point(nextZ, nextX, nextY));
+				box[nextZ][nextX][nextY] = box[Point.z][Point.x][Point.y] + 1;
+>>>>>>> 6a3cc47cd45911406db4a5dcd8dc9e94aa58acd4
 			}
 		}
+		
 		int max = 0;
 		for (int i = 0; i < H; i++) {
 			for (int j = 0; j < N; j++) {
