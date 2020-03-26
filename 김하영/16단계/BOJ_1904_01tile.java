@@ -15,9 +15,6 @@ public class BOJ_1904_01tile {
 		for (int i = 3; i <= N; i++) {
 			P[i] = P[i - 2] + P[i - 1];
 		}
-		for(int i = 0; i<P.length; i++) {
-			System.out.println(P[i]);
-		}
 		System.out.println(P[N] % 15746);
 	}
 }
