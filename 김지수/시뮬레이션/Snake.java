@@ -40,9 +40,10 @@ public class Snake {
 		snake.offer(new Position(r,c));
 		board[r][c] = 2;
 
+		show();
+
 		move();
 
-		//show();
 		System.out.println(time);
 
 		/*
