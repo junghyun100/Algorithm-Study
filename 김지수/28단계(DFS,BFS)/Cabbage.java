@@ -2,7 +2,7 @@ import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class Cabbage {
-	static int[] dx = {1,0,-1,-1};
+	static int[] dx = {1,0,-1,0};
 	static int[] dy = {0,1,0,-1};
 	static boolean[][] visited;
 	static int[][] arr;
