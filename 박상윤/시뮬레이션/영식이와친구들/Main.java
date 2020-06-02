@@ -28,32 +28,7 @@ public class Main {
 
     public static void main(String [] args) {
 
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int m = sc.nextInt();
-        int l = sc.nextInt();
-        int current = 0;
-        int next = 0;
-        int count = 0;
-        int [] friends = new int[n];
-
-
-        while(true) {
-            if(++friends[current] == m) break;
-            if(friends[current] % 2 == 0) {
-                next = current + l >= n ? l - (n - current)  : current + l;
-            }
-            else {
-                next = current - l < 0  ? n - (l - current)  : current - l;
-            }
-            current = next;
-            count++;
-
-        }
-
-
-
-        System.out.println(count);
+        Scanner sc = new Scanner
 
     }
 
